@@ -1,0 +1,155 @@
+/* Universal box sizing */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* using a grid container to layout the webpage */
+/* There will be 6 items in the grid to layout the individual containers */
+.header { grid-area: header; }
+.topnav { grid-area: topnav; }
+.leftcolumn { grid-area: left; }
+.maincolumn { grid-area: main; }
+.rightcolumn { grid-area: right; }
+.footer { grid-area: footer; }
+
+
+/* The grid container (webpage) will be displayed as follows */
+.grid-container {
+    display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'topnav topnav topnav topnav topnav topnav'
+    'left left main main right right'
+    'footer footer footer footer footer footer';
+  gap: 10px;
+  background-color: #009999;
+  padding: 10px;
+}
+.grid-container > div {
+    
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+  /* Style the header */
+.header {
+    grid-area: header;
+    background-color:#e6ffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 35px;
+    
+}
+/*Responsive font size makes the text smaller on a smaller screen */
+@media screen and (max-width:600px) {
+    .grid-container {
+        grid-template-areas:
+        'header header header header header header'
+        'topnav topnav topnav topnav topnav topnav'
+        'left left left left left left'
+        'main main main main main main'
+        'right right right right right right'
+        'footer footer footer footer footer footer';
+    }
+    h1 {
+        font-size: 1.2em;
+    }
+    .topnav a {
+        font-size: 1.2em;
+        width: 100%
+    }
+    .container1 {
+        flex: 100%;
+    }
+    .footer {
+        width: 100%;
+        font-size: 1.2em;
+    }
+
+}
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: black;
+}
+/* Style the topnav links */
+.topnav a {
+    float:left;
+    display: block;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+/* Change color on hover */
+.topnav a:hover {
+    background-color: white;
+    color: black;
+}
+.leftcolumn,
+.maincolumn,
+.rightcolumn {
+    padding: 10px;
+    grid-template-columns: 1fr;
+}
+.leftcolumn {
+    grid-area: left;
+}
+.maincolumn {
+    grid-area: main;
+    text-justify: auto;
+}
+.rightcolumn {
+    grid-area: right;
+}
+.footer {
+    grid-area: footer;
+    padding: 10px;
+    text-align: center;  
+}
+.box {
+    background-color: #e6ffff;
+    grid-area: auto;
+    position: relative;
+    text-align: center;
+    padding: 10px
+}
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+.btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 18px;
+    
+}
